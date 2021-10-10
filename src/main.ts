@@ -1,3 +1,4 @@
+import bubbleSort from './algorithms/bubble';
 import generateBarArray from './components/bars';
 import { handleNewArrayBtn } from './utils/buttonFunctions';
 
@@ -11,6 +12,7 @@ const app = document.querySelector<HTMLDivElement>('#app')!
 const main = document.querySelector<HTMLElement>('#main')!
 
 document.getElementById('NewArray')!.addEventListener('click', handleNewArrayBtn)
+document.getElementById('Bubble')!.addEventListener('click', bubbleSort)
 
 const vizCanvas = generateBarArray();
 main.append(vizCanvas)
