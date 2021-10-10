@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "name": "Launch localhost",
+      "url": "127.0.0.1:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Launch Microsoft Edge and open the Edge DevTools",
+      "request": "launch",
+      "type": "vscode-edge-devtools.debug",
+      "url": ""
+    }
+  ]
+}
