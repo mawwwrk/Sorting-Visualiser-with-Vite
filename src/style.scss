@@ -1,0 +1,52 @@
+:root {
+  --font-colour: black;
+}
+
+body {
+  background: linear-gradient(-45deg, #ebd3cc, #e2bccb, #a6bec7, #afc7c1);
+  background-size: 400% 400%;
+  animation: gradient 45s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  & * {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--font-colour);
+    background: radial-gradient();
+  }
+  & > * {
+    padding: 0 1vw;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+
+  color: var(--font-colour);
+}
+
+header {
+  padding: 0 1vw;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
