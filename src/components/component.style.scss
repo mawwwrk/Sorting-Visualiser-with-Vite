@@ -1,0 +1,19 @@
+#vizCanvas {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  align-items: flex-end;
+  height: 330px;
+}
+
+.bar {
+  width: 0.75rem;
+  background: radial-gradient(farthest-side, cornflowerblue, darkslateblue);
+  &.active {
+    background: radial-gradient(farthest-side, coral, palevioletred);
+  }
+}
+
+.vizElem > p {
+  font-size: xx-small;
+}
