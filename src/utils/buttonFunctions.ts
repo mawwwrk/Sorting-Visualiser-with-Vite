@@ -1,3 +1,4 @@
+import { pauseBubble, stopBubble } from "../algorithms/bubble";
 import generateBarArray from "../components/bars";
 
 function handleNewArrayBtn() {
@@ -9,5 +10,13 @@ function handleNewArrayBtn() {
 
 }
 
-export { handleNewArrayBtn }
+function stopAction() {
+  stopBubble()
+}
+
+function pauseAction() {
+  pauseBubble()
+}
+
+export { handleNewArrayBtn, stopAction, pauseAction }
 

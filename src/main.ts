@@ -1,6 +1,6 @@
-import bubbleSort from './algorithms/bubble';
+import { bubbleSort } from './algorithms/bubble';
 import generateBarArray from './components/bars';
-import { handleNewArrayBtn } from './utils/buttonFunctions';
+import { handleNewArrayBtn, pauseAction, stopAction } from './utils/buttonFunctions';
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
@@ -13,6 +13,8 @@ const main = document.querySelector<HTMLElement>('#main')!
 
 document.getElementById('NewArray')!.addEventListener('click', handleNewArrayBtn)
 document.getElementById('Bubble')!.addEventListener('click', bubbleSort)
+document.getElementById('Stop')!.addEventListener('click', stopAction)
+document.getElementById('Pause')!.addEventListener('click', pauseAction)
 
 const vizCanvas = generateBarArray();
 main.append(vizCanvas)
