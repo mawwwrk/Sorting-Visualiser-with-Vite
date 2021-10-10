@@ -11,4 +11,14 @@ function extractValue(el: HTMLDivElement) {
   return parseInt(el.children[1].textContent!)
 }
 
-export { toggleActive, extractValue }
+const speedSlider = document.getElementById('speedSlider')! as HTMLInputElement;
+
+let delay = 75
+
+function updateDelay(val: string) {
+  return delay = -1.85 * parseInt(val) + 200
+}
+
+speedSlider.addEventListener('input', function (_ev) { updateDelay(this.value) })
+
+export { toggleActive, extractValue, delay }

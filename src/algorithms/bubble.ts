@@ -1,8 +1,7 @@
-import { extractValue, toggleActive } from "../utils/utils";
+import { delay, extractValue, toggleActive } from "../utils/utils";
 
 let stop = false;
 let pause = false;
-let delay = 10;
 
 async function bubbleSort() {
   let i, j;
@@ -30,7 +29,7 @@ async function bubbleSort() {
 
       //* if pause, loop until unpaused
       while (pause) {
-        await new Promise<void>(resolve => setTimeout(() => { resolve() }, 100));
+        await new Promise<void>(resolve => setTimeout(() => { resolve() }, 150));
       }
       //* remove highlight; end loops if stopped.
       toggle();
