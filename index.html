@@ -5,22 +5,23 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/normalize.css" />
+    <link rel="stylesheet" href="src/style.scss" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/style.scss" />
     <title>Sorting Visualiser</title>
   </head>
   <body>
     <header>
       <h1>Sorting Visualiser</h1>
     </header>
+
     <nav>
       <div>
-        <button type="button" id="NewArray" class="btn new array">New Array</button>
+        <button type="button" id="NewArray" class="btn">New Array</button>
       </div>
       <div>
         <button type="button" id="Bubble" class="btn bubble sort">Bubble Sort</button>
@@ -30,6 +31,7 @@
         <button type="button" id="Merge" class="btn merge sort">Merge Sort</button>
       </div>
     </nav>
+    <main id="main"></main>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
