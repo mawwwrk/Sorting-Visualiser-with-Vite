@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap"
       rel="stylesheet"
     />
-    <title>Sorting Visualiser</title>
+    <title>just a thing i made.</title>
   </head>
   <body>
     <header>
@@ -25,16 +25,21 @@
       </div>
       <div>
         <button type="button" id="Bubble" class="btn bubble sort">Bubble Sort</button>
-        <!--         <button type="button" id="Selection" class="btn selection sort">Selection Sort</button>
         <button type="button" id="Insertion" class="btn insertion sort">Insertion Sort</button>
+        <!--         <button type="button" id="Selection" class="btn selection sort">Selection Sort</button>
         <button type="button" id="Quick" class="btn quick sort">Quick Sort</button>
         <button type="button" id="Merge" class="btn merge sort">Merge Sort</button> -->
       </div>
     </nav>
-    <main id="main"></main>
+    <main id="main">
+      <noscript>Your browser does not support JavaScript!</noscript>
+    </main>
     <div class="controls-bar">
       <button type="button" id="Stop" class="btn">Stop</button>
-      <input type="range" min="1" max="100" value="75" class="slider" id="speedSlider" />
+      <div class="speedHolder">
+        <label for="speedSlider" id="SliderText">Speed:</label>
+        <input type="range" min="1" max="100" value="75" class="slider" id="speedSlider" />
+      </div>
       <button type="button" id="Pause" class="btn">Pause</button>
     </div>
     <div id="app"></div>

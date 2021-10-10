@@ -1,6 +1,7 @@
 {
   "name": "sortviz-vite",
-  "version": "0.0.0",
+  "version": "0.2.0",
+  "author": "Mork",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

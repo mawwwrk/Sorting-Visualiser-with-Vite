@@ -1,9 +1,8 @@
-import { delay, extractValue, toggleActive } from "../utils/utils";
-
-let stop = false;
-let pause = false;
+import { stop, pause, toggleAnimation } from "../utils/buttonFunctions";
+import { delay, extractValue, swap, toggleActive } from "../utils/utils";
 
 async function bubbleSort() {
+  toggleAnimation(3)
   let i, j;
   const barsLength = document.getElementById('vizCanvas')!.childElementCount
   for (i = 0; i < barsLength - 1; i++) {
@@ -20,33 +19,22 @@ async function bubbleSort() {
       //* toggle highlight; compare and swap.
       toggle();
       if (extractValue(bar1) > extractValue(bar2)) {
-        bar2.remove();
-        document.getElementById('vizCanvas')!.insertBefore(bar2, bar1);
+        swap(bar1, bar2);
         sorted = false;
       }
       //* delay to slow down calculation.
       await new Promise<void>(resolve => setTimeout(() => { resolve() }, delay));
 
       //* if pause, loop until unpaused
-      while (pause) {
-        await new Promise<void>(resolve => setTimeout(() => { resolve() }, 150));
-      }
+      while (pause) { await new Promise<void>(resolve => setTimeout(() => { resolve() }, 150)) }
       //* remove highlight; end loops if stopped.
       toggle();
       if (stop) { j = barsLength }
     }
-    if (sorted) { stop = true }
-    if (stop) { i = barsLength; stop = !stop }
+    if (sorted) { break; }
+    if (stop) { i = barsLength }
   }
 }
 
-function stopBubble() {
-  stop = true
-}
 
-function pauseBubble() {
-  pause = !pause
-}
-
-
-export { bubbleSort, stopBubble, pauseBubble }
+export default bubbleSort

@@ -1,4 +1,3 @@
-import { pauseBubble, stopBubble } from "../algorithms/bubble";
 import generateBarArray from "../components/bars";
 
 function handleNewArrayBtn() {
@@ -10,13 +9,24 @@ function handleNewArrayBtn() {
 
 }
 
-function stopAction() {
-  stopBubble()
+let stop = false;
+let pause = false;
+
+function toggleAnimation(i: number) {
+  switch (i) {
+    case 1:
+      stop = true;
+      break;
+    case 2:
+      pause = !pause;
+      break;
+    case 3:
+      stop = false;
+      pause = false;
+    default:
+      break;
+  }
 }
 
-function pauseAction() {
-  pauseBubble()
-}
-
-export { handleNewArrayBtn, stopAction, pauseAction }
+export { handleNewArrayBtn, stop, pause, toggleAnimation }
 

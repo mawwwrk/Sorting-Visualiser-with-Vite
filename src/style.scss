@@ -70,3 +70,10 @@ nav {
   display: flex;
   justify-content: space-evenly;
 }
+
+.speedHolder {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 1rem;
+}

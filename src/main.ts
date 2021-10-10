@@ -1,6 +1,7 @@
-import { bubbleSort } from './algorithms/bubble';
+import bubbleSort from './algorithms/bubble';
+import insertionSort from './algorithms/insertion';
 import generateBarArray from './components/bars';
-import { handleNewArrayBtn, pauseAction, stopAction } from './utils/buttonFunctions';
+import { handleNewArrayBtn, toggleAnimation } from './utils/buttonFunctions';
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
@@ -11,10 +12,11 @@ const app = document.querySelector<HTMLDivElement>('#app')!
 
 const main = document.querySelector<HTMLElement>('#main')!
 
-document.getElementById('NewArray')!.addEventListener('click', handleNewArrayBtn)
-document.getElementById('Bubble')!.addEventListener('click', bubbleSort)
-document.getElementById('Stop')!.addEventListener('click', stopAction)
-document.getElementById('Pause')!.addEventListener('click', pauseAction)
+document.getElementById('NewArray')!.addEventListener('click', handleNewArrayBtn);
+document.getElementById('Bubble')!.addEventListener('click', bubbleSort);
+document.getElementById('Insertion')!.addEventListener('click', insertionSort)
+document.getElementById('Stop')!.addEventListener('click', (_ev) => toggleAnimation(1))
+document.getElementById('Pause')!.addEventListener('click', (_ev) => toggleAnimation(2))
 
 const vizCanvas = generateBarArray();
 main.append(vizCanvas)
