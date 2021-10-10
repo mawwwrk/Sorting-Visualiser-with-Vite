@@ -3,7 +3,7 @@ import insertionSort from './algorithms/insertion';
 import generateBarArray from './components/bars';
 import { handleNewArrayBtn, toggleAnimation } from './utils/buttonFunctions';
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+// const app = document.querySelector<HTMLDivElement>('#app')!
 
 /* app.innerHTML = `
   <h1>Hello Vite!</h1>
