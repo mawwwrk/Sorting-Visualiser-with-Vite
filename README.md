@@ -20,7 +20,7 @@ to run the project, copy the contents of /dist locally and open /dist/index.html
 
 ### Things i _might_ do, in order of likelihood:
 
-1. maybe start using bulma for styling instead of whatever this is now.
+1. maybe start using bulma for styling instead of whatever nonsense i'm doing now.
 2. better animation
 3. look at what i can do with SASS/SCSS
 4. look at haml? it looks like html but better
