@@ -1,36 +1,36 @@
-import { stop, pause, toggleAnimation } from "../utils/buttonFunctions";
-import { delay, extractValue, swap, toggleActive } from "../utils/utils";
+import controller from "../utils/animationControl";
+import { compareBars, vizElem } from "../utils/comparer";
+import { delay } from "../utils/utils";
 
 async function insertionSort() {
-  toggleAnimation(3)
-  let i, j;
+  controller.action('reset')
+  let i: number, j;
   const barsLength = document.getElementById('vizCanvas')!.childElementCount
   for (i = 1; i < barsLength; i++) {
-    const bars = document.getElementsByClassName('vizElem');
-    let bar2 = bars[i] as HTMLDivElement;
-    const bar2Key = extractValue(bar2);
+    const bars = document.getElementsByClassName('vizElem') as HTMLCollectionOf<vizElem>;
+    const compareStep = (x: vizElem) => compareBars(x, bars[i])
+    // const bar2Key = extractValue(bar2);
     j = i - 1;
-    let bar1 = bars[j] as HTMLDivElement;
-    let bar1Key = extractValue(bar1);
+    // let bar1 = bars[j] as HTMLDivElement;
+    // let bar1Key = extractValue(bar1);
+    let comparer = compareBars(bars[j], bars[i])
 
-    const toggle = () => [bar1, bar2].forEach(toggleActive);
-    while (j >= 0 && bar1Key > bar2Key) {
-      toggle()
-      swap(bar1, bar2)
+
+    while (j >= 0 && comparer.isLargerThan) {
+      comparer.toggle();
+      comparer.swap();
       await new Promise<void>(resolve => setTimeout(() => { resolve() }, delay));
 
-      while (pause) { await new Promise<void>(resolve => setTimeout(() => { resolve() }, 150)) }
+      while (controller.pause) { await new Promise<void>(resolve => setTimeout(() => { resolve() }, 150)) }
 
-      toggle()
+      comparer.toggle();
       j = j - 1;
       if (j >= 0) {
-        bar1 = bars[j] as HTMLDivElement;
-        bar1Key = extractValue(bar1);
-        bar2 = bars[j + 1] as HTMLDivElement;
+        comparer = compareBars(bars[j], bars[j + 1])
       }
-      if (stop) { j = -1 }
+      if (controller.stop) { j = -1 }
     }
-    if (stop) { i = barsLength }
+    if (controller.stop) { i = barsLength }
     await new Promise<void>(resolve => setTimeout(() => { resolve() }, delay));
 
   }
