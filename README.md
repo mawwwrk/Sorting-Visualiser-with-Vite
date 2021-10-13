@@ -2,6 +2,8 @@
 
 Based on https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 
+to run the project, copy the contents of ./dist in and open index.html.
+
 ## Some tools I'm using because they just make things better:
 
 - TypeScript because its JavaScript but better
