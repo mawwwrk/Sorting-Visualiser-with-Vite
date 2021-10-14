@@ -2,7 +2,7 @@
 
 Based on https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 
-to run the project, copy the contents of /dist locally and open /dist/index.html.
+Click [here](https://mawwwrk.github.io/SortVis/) to see mine in action 😃
 
 ## Some tools I'm using because they just make things better:
 
