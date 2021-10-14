@@ -1,10 +1,8 @@
-
-interface wrapper extends HTMLDivElement { }
+type wrapper = HTMLDivElement
 type children = {
   children: [HTMLDivElement, HTMLParagraphElement]
 }
-type vizElem = children & wrapper
-
+type vizElem = wrapper & children
 
 function compareBars(arg1: vizElem, arg2: vizElem) {
   function parseValue(el: vizElem) {
@@ -34,4 +32,5 @@ function compareBars(arg1: vizElem, arg2: vizElem) {
   return comparer
 }
 
-export { compareBars, vizElem }
+export { compareBars }; export type { vizElem };
+
